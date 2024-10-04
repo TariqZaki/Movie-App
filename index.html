@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--!- website icon link  ---->
+    <link rel="shortcut icon" href="images/logo.png">
+    <!--!- website icon link  ---->
+
+    <!--!- website title  ---->
+    <title>Movie App</title>
+    <!--!- website title  ---->
+
+    <!--!- google fonts links  ---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <!--!- google fonts links  ---->
+
+    <!--!- css links  ---->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!--!- css links  ---->
+</head>
+
+<body>
+    <!--?- side nav-bar ---->
+    <aside class="d-flex min-vh-100 position-fixed top-0">
+        <div class="innerSide d-flex flex-column justify-content-between min-vh-100 p-4">
+            <nav class="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer" id="playLink">Now playing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer" id="popLink">Popular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer" id="rateLink">Top Rate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer" id="trendLink">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer" id="upcomLink">Upcoming</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer" id="contactLink">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer text-white">
+                <div class="footerIcon">
+                    <i class="me-2 cursor-pointer fa-brands fa-facebook"></i>
+                    <i class="me-2 cursor-pointer fa-brands fa-twitter"></i>
+                    <i class=" cursor-pointer fa-solid fa-globe"></i>
+                </div>
+                <div class="footerContent">
+                    <p>Copyright Â© 2022 All Right <br> Reserved. <br>
+                        Designed by <a class="fs-5 fw-bolder" style="color: #ffc94a;"
+                            href="https://www.linkedin.com/in/tariq-zaki-2bbb7a323/" target="_blank">Tariq Zaki</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="outerSide d-flex flex-column justify-content-between py-5 text-center">
+            <div class="image">
+                <img src="images/logo.png" width="50%">
+            </div>
+            <div class="backToTop flex justify-content-center align-items-center rounded-2">
+                <a href="#home"><i class="fa-solid fa-sort-up rounded-2  fs-2 "
+                        style="color: var(--second-color);"></i></a>
+            </div>
+            <i class="fa-solid fa-bars fa-2x cursor-pointer openClose"></i>
+            <div class="backToBottom flex justify-content-center align-items-center rounded-2">
+                <a href="#contactUs"><i class="fa-solid fa-sort-down rounded-2 fs-2 p-2"
+                        style="color: var(--second-color)"></i></a>
+            </div>
+            <div class="icons d-flex flex-column">
+                <i class="cursor-pointer fa-solid fa-globe pb-1"></i>
+                <i class="cursor-pointer fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+    </aside>
+    <!--?- side nav-bar ---->
+
+    <!--?- loading & spinner ---->
+    <div class="loading">
+        <span class="loader"></span>
+    </div>
+    <!--?- loading & spinner ---->
+
+
+
+    <!--?- home section ---->
+    <section class="home min-vh-100" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-floating w-50 mx-auto mt-3">
+                        <input type="text" class="form-control" oninput="searchAboutMovie(this.value)" id="searchInput"
+                            placeholder="Search about Movie...">
+                        <label for="searchInput" class="text-dark"> <i class="fa-solid fa-magnifying-glass"></i> Search
+                            about
+                            Movie...</label>
+                    </div>
+                    <div class="dataShow py-3">
+                        <div class="row g-5" id="dataShow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact" id="contactUs">
+            <div class="container">
+                <div class="title">
+                    <h2 class="mt-5 text-white">Contact US</h2>
+                </div>
+                <div class="row  mb-5">
+                    <div class="col-md-12">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-3">
+                                        <input type="text"
+                                            class="form-control text-white border-0 border-bottom border-white bg-transparent "
+                                            id="nameInput" placeholder="Enter Your Name...">
+                                        <label for="nameInput">Enter Your Name...</label>
+                                        <div class="alert alert-danger d-none w-50 m-auto mt-2" id="alertName"> -At
+                                            least Three
+                                            Characters Name</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-3">
+                                        <input type="email"
+                                            class="form-control text-white border-0 border-bottom border-white bg-transparent"
+                                            id="emailInput" placeholder="Enter Your Email...">
+                                        <label for="emailInput">Enter Your Email...</label>
+                                        <div class="alert alert-danger d-none w-50 m-auto mt-2" id="alertEmail"> -Please
+                                            Enter A
+                                            Valid Email</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-3">
+                                        <input type="number"
+                                            class="form-control text-white  border-0 border-bottom border-white bg-transparent"
+                                            id="phoneInput" placeholder="Enter Your Phone...">
+                                        <label for="phoneInput">Enter Your Phone...</label>
+                                        <div class="alert alert-danger d-none w-50 m-auto mt-2" id="alertPhone"> -At
+                                            least You
+                                            Must Start (01 or +201 or 00201) then 9 numbers</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-3">
+                                        <input type="number"
+                                            class="form-control text-white  border-0 border-bottom border-white bg-transparent"
+                                            id="ageInput" placeholder="Enter Your Age...">
+                                        <label for="ageInput">Enter Your Age...</label>
+                                        <div class="alert alert-danger d-none w-50 m-auto mt-2" id="alertAge"> -At least
+                                            You
+                                            Must +16 years</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-3">
+                                        <input type="password"
+                                            class="form-control text-white position-relative  border-0 border-bottom border-white bg-transparent"
+                                            id="passInput" placeholder="Enter Your Password...">
+                                        <label for="passInput">Enter Your Password...</label>
+                                        <i class="fa-solid fa-eye cursor-pointer position-absolute"
+                                            id="show-password"></i>
+                                        <div class="alert alert-danger d-none w-50 m-auto mt-2" id="alertPass">
+                                            -contains
+                                            Minimum eight characters <br> -At Least One Uppercase Letter <br> -One
+                                            Lowercase
+                                            Letter <br> -At Least One Number and One Special Character </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mt-3">
+                                        <input type="password"
+                                            class="form-control text-white border-0 border-bottom border-white bg-transparent"
+                                            id="repassInput" placeholder="Enter Your ReEnter Password...">
+                                        <label for="repassInput">Enter Your ReEnter Password...</label>
+                                        <div class="alert alert-danger d-none w-50 m-auto mt-2" id="alertRepass"> -You
+                                            must make
+                                            sure that it matches the previous password </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger d-none w-50 m-auto mt-2" id="alertFillInputs"> -Please
+                                    Fill All Inputs </div>
+                                <button class="btn btn-light ms-3  mt-3"
+                                    style="width: 100px; height: 40px;">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--?- home section ---->
+
+    <!--!- js links  ---->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Random Quote Generator.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--!- js links  ---->
+</body>
+
+</html>
